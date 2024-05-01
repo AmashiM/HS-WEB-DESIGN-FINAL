@@ -1,0 +1,303 @@
+@use "sass:color"
+
+$bg-color: #333
+$avatar-default-color: #d9d9d9
+
+*
+  font-family: "Comic Sans MS", "Comic Sans", cursive
+  font-size: 16px
+
+body
+	background-image: linear-gradient(to right, adjust-color($bg-color, $lightness: -7%), adjust-color($bg-color, $lightness: -0%), adjust-color($bg-color, $lightness: -7%))
+	background-position: center
+  overflow: hidden
+	margin: 5px
+	padding: 0px
+
+code
+  font-family: monospace
+  border-radius: 5px
+  background-color: adjust-color($bg-color, $lightness: +50%)
+  color: black
+  padding: 8px
+#container
+	display: grid
+	grid-template-rows: 1fr 9fr
+
+.avatar
+  border-radius: 50%
+  background-color: $avatar-default-color
+
+#avatar-setting
+  border-radius: 5px
+  padding: 8px
+  width: fit-content
+  background-color: adjust-color($bg-color, $lightness: +2%)
+
+  #settings-avatar
+    border: 3px solid black
+    width: 128px
+    height: 128px
+    border-radius: 50%
+  
+  #avatar-setting-wrapper
+    display: inline-grid
+    grid-template-columns: 1fr 1fr
+
+.app-message-avatar
+  border-radius: 50%
+  border: 1px solid black
+
+    
+div#message-box
+  border: 1px solid black
+  border-radius: 5px
+  padding: 5px
+  background-color: adjust-color($bg-color, $lightness: -2%)
+  max-height: 80vh
+  overflow-y: scroll
+  overflow-x: hidden
+  
+.app-message
+  padding: 8px
+  width: fit-content
+  background-color: adjust-color($bg-color, $lightness: +10%)
+  display: grid
+  justify-content: space-between;
+  gap: 5px
+  border-radius: 5px
+  margin: 2px
+
+  
+  
+  .app-message-author-data > div
+    grid-row: 1
+    grid-column: 1 / span 3
+  
+  .app-message-author-data
+    display: grid
+
+    .app-message-avatar
+      grid-row: 1
+      grid-column: 1
+
+    .app-message-username
+      grid-row: 1
+      grid-column: 2
+      color: #f0f0f0
+      
+    .app-message-author
+      grid-row: 1
+      grid-column: 3
+      color: adjust-color(#78acff, $lightness: +10%)
+      font-size: 10px
+
+  .app-message-body
+    grid-row: 2
+    grid-column: 1 / span 3
+    
+    .app-message-content
+      border-radius: 5px
+      width: auto
+      padding: 5px
+      background-color: adjust-color($bg-color, $lightness: +8%)
+      white-space: pre-wrap
+
+    .app-message-image
+      max-width: 40vw
+      max-height: 40vh
+
+.app-message:hover
+  border: 2px solid adjust-color($bg-color, $lightness: +2%)
+  border-radius: 5px
+  background-color: adjust-color($bg-color, $lightness: +5%)
+    
+
+nav#navbar
+  list-style-type: none
+  margin: 0
+  padding: 0
+  overflow: hidden
+  background-color: adjust-color($bg-color, $lightness: -5%)
+  border: 1px solid black
+  border-radius: 5px
+
+  span
+    float: left
+  
+  a
+    display: block
+    color: white
+    text-align: center
+    padding: 14px 16px
+    text-decoration: none
+  
+  a:hover
+    background-color: #111
+
+nav#navbar::after
+  clear: both
+
+
+#message-input
+  margin: 0px
+  width: 98vw
+  border-radius: 5px
+  padding: 10px
+  border: 1px solid black
+  background-color: adjust-color($bg-color, $lightness: +2%)
+  // position: absolute
+  // bottom: 0px
+  // left: 0px
+  align-content: center
+  justify-content: center
+
+  div
+    display: grid
+    grid-template-columns: 78.4vw 9.8vw 9.8vw
+
+    textarea, button, select
+      border-color: adjust-color($bg-color, $lightness: +2%)
+
+    textarea
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+      resize: none
+      min-height: 23px
+      overflow: hidden
+      overflow-y: scroll
+      background-color: adjust-color($bg-color, $lightness: +15%)
+
+    textarea:focus
+      background-color: white
+      
+    textarea:hover
+      background-color: white
+
+    textarea:active
+      background-color: white
+
+    textarea::placeholder
+      color: white
+      opacity: 1
+    
+    textarea:-ms-input-placeholder
+      color: white
+    
+    textarea::-ms-input-placeholder
+      color: white
+
+    textarea::-webkit-scrollbar
+      background: inherit
+
+    textarea::-webkit-scrollbar-track
+      background: inherit
+
+    textarea::-webkit-scrollbar-thumb
+      background: inherit
+
+    button
+      background-color: #94bbff
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+      box-shadow: inset 0 -2px adjust-color(#94bbff, $lightness: -5%)
+
+    button:active
+      background-color: #b0b0b0
+      box-shadow: inset 0 -2px adjust-color(#b0b0b0, $lightness: -5%)
+
+    select
+      border: 1px solid black
+      border-radius: 0%
+      border-style: inset
+      background-color: adjust-color($bg-color, $lightness: +8%)
+
+    select:hover option
+      background-color: white
+
+    select:hover
+      background-color: white
+
+#message-input > *
+  margin: 0px
+  padding: 0px
+
+
+::-webkit-scrollbar
+  width: 15px
+
+::-webkit-scrollbar-track
+  background: adjust-color($bg-color, $lightness: +5%)
+  border-radius: 5px
+
+::-webkit-scrollbar-track:hover
+  background: adjust-color($bg-color, $lightness: +10%)
+ 
+::-webkit-scrollbar-thumb
+  background: #888
+  border-radius: 10px;
+
+::-webkit-scrollbar-thumb:hover
+  background: adjust-color(#888, $lightness: +10%)
+
+
+#page-about
+  color: white
+  overflow-y: scroll
+  height: 90vh
+
+  h1
+    font-size: 32px
+
+  h2
+    font-size: 28px
+  
+  dt
+    color: #94d1ff
+
+#home-page 
+  color: adjust-color(white, $lightness: -15%)
+
+  table, tr, th
+    border: 1px solid black
+    border-radius: 5px
+
+  ol
+    background-color: adjust-color($bg-color, $lightness: +5%)
+    border-radius: 5px
+
+    li
+      padding: 2px
+
+    ::marker
+      color: #57e6ff
+  
+  
+
+#page-contact
+  form
+    background-color: adjust-color($bg-color, $lightness: +10%)
+    border: 1px solid black
+    margin: auto auto auto auto
+    padding: 8px
+    width: fit-content
+    border-radius: 5px
+    
+    input
+      border-radius: 5px
+    
+    textarea
+      border-radius: 5px
+      resize: none
+
+#login-page
+  form#login-form
+    background-color: adjust-color($bg-color, $lightness: +10%)
+    border: 1px solid black
+    margin: auto auto auto auto
+    padding: 8px
+    width: fit-content
+    border-radius: 5px
+    
+    input
+      border-radius: 5px

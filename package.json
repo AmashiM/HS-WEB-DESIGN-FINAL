@@ -1,0 +1,23 @@
+{
+    "name": "glitch-mvp-node",
+    "version": "0.1.0",
+    "description": "A simple Node app built on fastify, instantly up and running.",
+    "main": "server.js",
+    "scripts": {
+      "start": "python3 main.py",
+      "setup": "pip3 install peewee sanic secure sanic-sass sanic-limiter"
+    },
+    "dependencies": {},
+    "engines": {
+      "node": "14.x"
+    },
+    "repository": {
+      "url": "https://glitch.com/edit/#!/glitch-mvp-node"
+    },
+    "license": "MIT",
+    "keywords": [
+      "node",
+      "glitch"
+    ]
+  }
+  
