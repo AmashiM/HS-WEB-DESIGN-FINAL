@@ -1,4 +1,4 @@
 # HS-WEB-DESIGN-FINAL
 
 this was my final for web design class.
-i have this glitch link but imma move it here when i find the login: https://glacier-hammerhead-handbell.glitch.me/about
+This was written in 2022-2023 fyi so the information in it isn't up to date.
